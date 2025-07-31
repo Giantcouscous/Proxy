@@ -1,4 +1,4 @@
-import { fetch } from 'undici';
+// Native fetch is already available in Vercel's Node runtime
 
 export default async function handler(req, res) {
   const apiKey = process.env.OPENAI_API_KEY;
@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await fetch(`${baseUrl}/v1/chat/completions`, {
+    const response = await fetch(`${baseUrl}/v1/chat/completions`, { ... });
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
